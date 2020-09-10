@@ -21,6 +21,10 @@ const WorkSchema = new Schema({
       type: Number,
       min: 0
   },
+  distance: {
+    type: Number,
+    min: 0
+},
   weight: {
       type: Number,
       min: 0
