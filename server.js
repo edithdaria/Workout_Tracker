@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //connecting to mongodb atlas
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutTracker", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Workout", { useNewUrlParser: true });
 
 //serverside api calls
 require('./routes/api-routes')(app);
