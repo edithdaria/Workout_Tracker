@@ -7,6 +7,9 @@ const logger = require("morgan");
 //mongodb
 const mongoose = require("mongoose");
 
+//env file
+const dotenv = require("dotenv").config();
+
 //port
 const PORT = process.env.PORT || 3080;
 
@@ -24,7 +27,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //connecting to mongodb atlas
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Workout", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI , { useNewUrlParser: true });
 
 //serverside api calls
 require('./routes/api-routes')(app);
