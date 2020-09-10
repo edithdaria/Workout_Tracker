@@ -4,8 +4,8 @@ module.exports = function (app) {
 
     app.get("/api/workouts", (req, res) => {
         db.Workout.find({})
-            .then(workouts => {
-                res.json(workouts);
+            .then(data => {
+                res.json(data);
             })
             .catch(err => {
                 console.log(err);
@@ -15,8 +15,8 @@ module.exports = function (app) {
 
     app.post("/api/workouts", ({ body }, res) => {
         db.Workout.create(body)
-            .then(workout => {
-                res.json(workout);
+            .then(data => {
+                res.json(data);
             })
             .catch(err => {
                 console.log(err);
@@ -40,8 +40,8 @@ module.exports = function (app) {
         let findDay = new Date();
         findDay = findDay.setDate(findDay.getDate() - 7);
         db.Workout.find({ day: { $gte: findDay } })
-            .then(workouts => {
-                res.json(workouts);
+            .then(data => {
+                res.json(data);
             })
             .catch(err => {
                 console.log(err);
